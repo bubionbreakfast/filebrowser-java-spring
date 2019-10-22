@@ -19,12 +19,11 @@ public class Folder {
 
     @JsonIgnoreProperties("folders")
     @OneToMany(mappedBy = "folders")
-    @JoinColumn(name = "file_id", nullable = false)
+    @JoinColumn(name = "user_id", nullable = false)
     private User user;
 
-    @JsonIgnoreProperties("folders")
-    @ManyToOne
-    @JoinColumn(name = "file_id", nullable = false)
+
+    @OneToMany(mappedBy = "folder", fetch = FetchType.LAZY)
     private List<File> files;
 
 

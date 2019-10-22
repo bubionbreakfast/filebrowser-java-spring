@@ -17,8 +17,8 @@ public class User {
     @Column(name = "name")
     private String name;
 
-    @JsonIgnoreProperties("user")
-    @OneToMany(mappedBy = "user")
+
+    @OneToMany(mappedBy = "user", fetch = FetchType.LAZY)
     private List<Folder> folders;
 
     public User(String name) {
