@@ -19,12 +19,12 @@ public class Folder {
     private String title;
 
     @JsonIgnoreProperties("folders")
-    @OneToMany(mappedBy = "folders")
+    @ManyToOne
     @JoinColumn(name = "user_id", nullable = false)
     private User user;
 
-
-    @OneToMany(mappedBy = "folder", fetch = FetchType.LAZY)
+    @JsonIgnoreProperties("folder")
+    @OneToMany(mappedBy = "folder")
     private List<File> files;
 
 

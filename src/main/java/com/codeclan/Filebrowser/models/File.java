@@ -27,8 +27,8 @@ public class File {
     @JoinColumn(name = "folder_id", nullable = false)
     private Folder folder;
 
-    public File(Long id, String name, String extension, int size, Folder folder) {
-        this.id = id;
+    public File(String name, String extension, int size, Folder folder) {
+
         this.name = name;
         this.extension = extension;
         this.size = size;
